@@ -1,0 +1,25 @@
+set cut_paste_input [stack 0]
+version 8.0 v3
+push $cut_paste_input
+Expression {
+temp_name0 bx
+temp_expr0 ceil(x/times)*times
+temp_name1 by
+temp_expr1 ceil(y/times)*times
+expr0 r(bx+(noise(0.1,bx,frame)*10+noise(0.1,by/5,0.4)*20+sin(by/50)*noise(0.5,0.1,by)*100)*noi,(by+(3+frame*speed)*noi)*num%height+noise(0.7,by/20,frame)*3+bx/10*noi)
+expr1 r(bx+(noise(0.1,bx,frame)*10+noise(0.2,by/5,0.2)*20+sin(by/50)*noise(0.3,0.2,by)*100)*noi,(by+(3+frame*speed)*noi)*num%height+noise(0.2,by/20,frame*0.5)*3+bx/10*noi)
+expr2 r(bx+(noise(0.1,bx,frame)*10+noise(0.3,by/5,0.5)*20+sin(by/50)*noise(0.2,0.6,by)*100)*noi,(by+(3+frame*speed)*noi)*num%height+noise(0.5,by/20,frame*0.8)*3+bx/10*noi)
+name Expression1
+selected true
+xpos -40
+ypos -284
+addUserKnob {20 User}
+addUserKnob {7 num t num R 0 2}
+num 1.37
+addUserKnob {7 noi t noi}
+noi 0.495
+addUserKnob {7 speed t speed R 0 1000}
+speed 365
+addUserKnob {7 times t times R 1 10}
+times 3.4
+}
